@@ -1,0 +1,10 @@
+.code{
+    color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+    padding: .25rem;
+}
+.scroll { 
+    height: 100px; 
+    overflow-x: hidden; 
+    overflow-x: auto; 
+}

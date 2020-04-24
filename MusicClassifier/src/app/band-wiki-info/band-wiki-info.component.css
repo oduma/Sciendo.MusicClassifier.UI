@@ -1,0 +1,8 @@
+.scroll { 
+    height: 300px; 
+    overflow-x: hidden; 
+    overflow-x: auto; 
+} 
+.alignment-top{
+    padding-top: .75rem;
+}

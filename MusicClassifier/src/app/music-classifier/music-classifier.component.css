@@ -1,0 +1,17 @@
+.alignment-1{
+    padding-left: 1rem;
+    padding-top: .25rem;
+}
+.alignment-2{
+    margin-left: 0rem;
+    margin-top: 0rem;
+    margin-right: 0rem;
+}
+.output-window{
+    border-width: 1px;
+    border-color: green;
+}
+.alignment-3{
+    padding-left: 0rem;
+    padding-top: .75rem;
+}
