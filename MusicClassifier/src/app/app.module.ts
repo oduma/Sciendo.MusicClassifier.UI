@@ -13,6 +13,11 @@ import { BandWikiInfoComponent } from './band-wiki-info/band-wiki-info.component
 import { BandMembersListComponent } from './band-members-list/band-members-list.component';
 import { AlbumsListComponent } from './albums-list/albums-list.component';
 import { TracksListComponent } from './tracks-list/tracks-list.component';
+import {EnvironmentUrlService} from './services/environment-url.service';
+import {HttpClientService} from './services/http-client.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule} from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -30,9 +35,13 @@ import { TracksListComponent } from './tracks-list/tracks-list.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    EnvironmentUrlService,
+    HttpClientService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,23 @@
 .code{
     color: antiquewhite;
     font-family: 'Courier New', Courier, monospace;
+    font-size: smaller;
     padding: .25rem;
 }
 .scroll { 
     height: 100px; 
     overflow-x: hidden; 
     overflow-x: auto; 
+}
+.output-prompt{
+    color: gray;
+}
+.output-subject{
+    color: gold;
+}
+.output-verb{
+    color:palevioletred;
+}
+.output-area{
+    color: lightcyan;
 }

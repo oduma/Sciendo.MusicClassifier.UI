@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { OutputService } from '../services/output.service';
+import { Observable } from 'rxjs';
+import { Action } from '../models/action';
 
 @Component({
   selector: 'app-output-window',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutputWindowComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private outputService: OutputService) {
+    this.outputActions=outputService.actions.asObservable();
+   }
+  outputActions:Observable<Action[]>;
   ngOnInit() {
+  }
+
+  getFormatedTime(occured: Date): string{
+    return `${occured.getHours()}:${occured.getMinutes()}:${occured.getSeconds()}`;
   }
 
 }
