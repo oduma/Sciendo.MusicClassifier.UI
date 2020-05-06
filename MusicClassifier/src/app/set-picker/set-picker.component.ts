@@ -5,6 +5,8 @@ import { Action } from '../models/action';
 import { getLocaleDateTimeFormat } from '@angular/common';
 import { OutputService } from '../services/output.service';
 import { ArtistService } from '../services/artist.service';
+import { Router } from '@angular/router';
+import { HelpService } from '../services/help.service';
 
 @Component({
   selector: 'app-set-picker',
@@ -18,7 +20,7 @@ export class SetPickerComponent implements OnInit {
   @Output()
   noOfSets:Observable<number>;
   
-  constructor(private sets: SetsService, private outputService: OutputService, private artistService: ArtistService) { 
+  constructor(sets: SetsService, private outputService: OutputService, private helpService:HelpService) { 
     this.setsAvailable=sets.getSets();
     this.noOfSets=sets.noOfSets;
   }
@@ -30,6 +32,8 @@ export class SetPickerComponent implements OnInit {
   {
     let action: Action={subject: newSet,area: "sets", verb:"selected", occured:new Date()};
     this.outputService.addAction(action);
+    if(newSet!="noSet")
+      this.helpService.setSelected();
     this.eventForOutput.emit(action);
   }
   ngOnInit() {

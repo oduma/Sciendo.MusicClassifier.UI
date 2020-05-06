@@ -11,12 +11,15 @@ import { ArtistInfoComponent } from './artist-info/artist-info.component';
 import { BandInfoComponent } from './band-info/band-info.component';
 import { BandWikiInfoComponent } from './band-wiki-info/band-wiki-info.component';
 import { BandMembersListComponent } from './band-members-list/band-members-list.component';
-import { AlbumsListComponent } from './albums-list/albums-list.component';
 import { TracksListComponent } from './tracks-list/tracks-list.component';
 import {EnvironmentUrlService} from './services/environment-url.service';
 import {HttpClientService} from './services/http-client.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule} from '@angular/router';
+import { HelpComponent } from './help/help.component';
+import { InterceptorService } from './services/interceptor.service';
+import { LoaderService } from './services/loader.service';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 @NgModule({
@@ -30,17 +33,33 @@ import { RouterModule} from '@angular/router';
     BandInfoComponent,
     BandWikiInfoComponent,
     BandMembersListComponent,
-    AlbumsListComponent,
-    TracksListComponent
+    TracksListComponent,
+    HelpComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule, 
+    RouterModule.forRoot([
+      {path:'set/:setName', component:MusicClassifierComponent},
+      // {path:'overall', component:OverallSituationComponent},
+      // {path:'history/:year',component:HistoryComponent},
+      // {path: 'admin', component:AdminComponent},
+      // {path: 'graph', component:GraphDisplayComponent},
+      {path: '', redirectTo:'/', pathMatch: 'full'}
+    ])
   ],
   providers: [
     EnvironmentUrlService,
-    HttpClientService
+    HttpClientService,
+    // InterceptorService,
+    // LoaderService,
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass:InterceptorService,
+    //   multi:true
+    // }
   ],
   bootstrap: [AppComponent]
 })

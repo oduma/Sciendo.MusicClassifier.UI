@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ArtistService } from '../services/artist.service';
+import { TrackDetails } from '../models/track-details';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tracks-list',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TracksListComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  tracks:Observable<TrackDetails[]>;
+  constructor() {
+   }
 
   ngOnInit() {
   }

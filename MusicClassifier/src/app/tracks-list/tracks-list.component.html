@@ -1,14 +1,22 @@
-<div class="container-fluid">
-    <div class="row">
-        <select size="12" class="full-list">
-            <option>Track 1</option>
-            <option>Track 1</option>
-            <option>Track 1</option>
-            <option>Track 1</option>
-            <option>Track 1</option>
-            <option>Track 1</option>
-            <option>Track 1</option>
-            <option>Track 1</option>
-        </select>
-    </div>
-    </div>
+<div class="table-responsive">
+<table class="table table-sm">
+    <thead>
+        <th>Role</th>
+        <th>Album</th>
+        <th>Track No.</th>
+        <th>Track</th>
+        <th>Year</th>
+        <th>File</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let currentTrack of tracks | async">
+            <td>{{currentTrack.artistInvolvmentType}}</td>
+            <td>{{currentTrack.albumName}}</td>
+            <td>{{currentTrack.trackNo}}</td>
+            <td>{{currentTrack.name}}</td>
+            <td>{{currentTrack.year}}</td>
+            <td>{{currentTrack.file}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

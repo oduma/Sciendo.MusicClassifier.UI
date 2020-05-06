@@ -1,13 +1,10 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4">
-            <app-albums-list></app-albums-list>
-        </div>
-        <div class="col-md-4">
-            <app-tracks-list></app-tracks-list>
+        <div class="col-md-8">
+            <app-tracks-list [tracks]="tracks"></app-tracks-list>
         </div>
         <div class="col-md-4">    
-            <app-band-members-list></app-band-members-list>
+            <app-band-members-list [bandMembers]="bandMembers"></app-band-members-list>
         </div>
     </div>
 </div>

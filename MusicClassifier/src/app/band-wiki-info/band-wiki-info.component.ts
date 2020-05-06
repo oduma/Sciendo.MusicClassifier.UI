@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-band-wiki-info',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BandWikiInfoComponent implements OnInit {
 
+  @Input()
+  bandWikiPageUrl:Observable<string>;
+
+  bandWikiPageContent:Observable<string>;
   constructor() { }
 
   ngOnInit() {

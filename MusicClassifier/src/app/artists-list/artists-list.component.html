@@ -1,20 +1,30 @@
-<div *ngIf="artists | async as artistsList; else noSet">
-    <table class="table table-striped">
+<div class="table-responsive">
+    <table class="table table-sm">
         <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Type</th>
-            </tr>
+            <th>Artists</th>
         </thead>
         <tbody>
-            <tr *ngFor="let artist of artistsList">
-                <td style="display:none;">{{artist.id}}</td>
-                <td>{{artist.name}}</td>
-                <td>{{artist.artistType}}</td>
+            <tr>
+                <div *ngIf="artists | async as artistsList; else noSet" class="listbox-area">
+                    <ul id="artists_list" 
+                        tabindex="0" 
+                        role="listbox"
+                        (focus)="focusEvent($event)"
+                        (keydown)="keyDownEvent($event)"
+                        #artist_list>
+                        <li *ngFor="let artist of artistsList" role="option"  id="{{artist.id}}" [ngClass]="{'option-highlight': artist.id===selectedArtistId}">
+                            <div class="option-item">
+                                <span>{{artist.name}}</span>
+                                <span>{{artist.artistType}}</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div></div>
+                </div>
+                <ng-template #noSet>
+                    Load a set to view artists.
+                </ng-template>
             </tr>
         </tbody>
     </table>
 </div>
-<ng-template #noSet>
-    Load a set to view artists.
-</ng-template>

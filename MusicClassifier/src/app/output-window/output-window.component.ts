@@ -10,10 +10,12 @@ import { Action } from '../models/action';
 })
 export class OutputWindowComponent implements OnInit {
 
-  constructor(private outputService: OutputService) {
+  constructor(outputService: OutputService) {
     this.outputActions=outputService.actions.asObservable();
    }
-  outputActions:Observable<Action[]>;
+  
+   outputActions:Observable<Action[]>;
+
   ngOnInit() {
   }
 

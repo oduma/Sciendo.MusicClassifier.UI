@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TrackDetails } from '../models/track-details';
+import { ArtistSummary } from '../models/artist-summary';
 
 @Component({
   selector: 'app-band-info',
@@ -7,6 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BandInfoComponent implements OnInit {
 
+  @Input()
+  tracks:Observable<TrackDetails[]>;
+
+  @Input()
+  bandMembers:Observable<ArtistSummary[]>
+ 
   constructor() { }
 
   ngOnInit() {

@@ -2,15 +2,16 @@
     color: antiquewhite;
     font-family: 'Courier New', Courier, monospace;
     font-size: smaller;
-    padding: .25rem;
+    padding: 0.1rem;
 }
 .scroll { 
     height: 100px; 
     overflow-x: hidden; 
-    overflow-x: auto; 
+    overflow-anchor: auto;
 }
 .output-prompt{
     color: gray;
+    padding-left: 0rem;
 }
 .output-subject{
     color: gold;
@@ -20,4 +21,12 @@
 }
 .output-area{
     color: lightcyan;
+}
+.fullWidth{
+    width:100%;
+
+}
+
+.flex-fill{
+    flex:1 1 auto;
 }

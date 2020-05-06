@@ -1,11 +1,14 @@
-<div class="container-fluid">
-<div class="row">
-    <select size="12" class="full-list">
-        <option>Bon Scott</option>
-        <option>Bon Scott</option>
-        <option>Bon Scott</option>
-        <option>Bon Scott</option>
-        <option>Bon Scott</option>
-    </select>
-</div>
+<div class="table-responsive">
+    <table class="table table-sm">
+        <thead>
+            <th>Band Members</th>
+        </thead>
+        <tbody>
+            <tr>    
+                <select size="12" class="full-list">
+                    <option  *ngFor="let bandMember of bandMembers | async">{{bandMember.name}}</option>
+                </select>
+            </tr>
+        </tbody>
+    </table>
 </div>

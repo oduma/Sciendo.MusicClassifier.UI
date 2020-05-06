@@ -1,5 +1,5 @@
-<div class="container-fluid bg-dark">
-    <div class="code scroll">
+<div class="bg-dark d-flex">
+    <div class="code scroll fullWidth" #outputScroll [scrollTop]="outputScroll.scrollHeight">
         <div *ngFor="let outputAction of outputActions | async">
             <span class="output-prompt">[{{getFormatedTime(outputAction.occured)}}]&gt;</span>
             <span class="output-subject">{{outputAction.subject}}</span>&nbsp;

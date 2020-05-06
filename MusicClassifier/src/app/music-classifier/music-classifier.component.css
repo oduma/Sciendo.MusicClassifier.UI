@@ -1,5 +1,4 @@
 .alignment-1{
-    padding-left: 1rem;
     padding-top: .25rem;
 }
 .alignment-2{
@@ -8,10 +7,20 @@
     margin-right: 0rem;
 }
 .output-window{
-    border-width: 1px;
-    border-color: green;
+    border-width: 0.05rem;
+    border-color: darkgray;
+    border-style: solid;
+    border-radius: 0.25rem;
 }
 .alignment-3{
     padding-left: 0rem;
     padding-top: .75rem;
+}
+.fullWidth
+{
+    width:100%;
+}
+
+.less-left{
+    padding-left: 0.3rem;
 }
